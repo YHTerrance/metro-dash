@@ -5,10 +5,25 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useTransition, useState } from 'react';
 import { SearchSelectItem, SearchSelect } from '@tremor/react';
 
+const stations = [
+  {
+    name: '石牌站',
+  },
+  {
+    name: '北投站',
+  },
+  {
+    name: '劍潭站',
+  },
+  {
+    name: '台北車站',
+  }
+];
 
-export default function Search({ disabled }: { disabled?: boolean }) {
+export default function StationSelect({ disabled }: { disabled?: boolean }) {
   const { replace } = useRouter();
   const pathname = usePathname();
+  const [station, setStation] = useState('');
   const [isPending, startTransition] = useTransition();
 
   function handleSearch(term: string) {
@@ -18,7 +33,6 @@ export default function Search({ disabled }: { disabled?: boolean }) {
     } else {
       params.delete('q');
     }
-
     startTransition(() => {
       replace(`${pathname}?${params.toString()}`);
     });
@@ -31,7 +45,16 @@ export default function Search({ disabled }: { disabled?: boolean }) {
       </label>
 
       <div className="rounded-md shadow-sm">
-        <div
+
+        <SearchSelect value={station} onValueChange={setStation} disabled={disabled} placeholder="Select a station">
+          {stations.map((station) => (
+            <SearchSelectItem key={station.name} value={station.name}>
+              {station.name}
+            </SearchSelectItem>
+          ))}
+        </SearchSelect>
+
+        {/* <div
           className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
           aria-hidden="true"
         >
@@ -49,7 +72,7 @@ export default function Search({ disabled }: { disabled?: boolean }) {
           placeholder="Search by name..."
           spellCheck={false}
           onChange={(e) => handleSearch(e.target.value)}
-        />
+          /> */}
       </div>
 
       {isPending && (
