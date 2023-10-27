@@ -8,8 +8,8 @@ import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
 
 const navigation = [
-  { name: 'Dashboard', href: '/' },
-  { name: 'Stations', href: '/stations' }
+  { name: '總覽', href: '/' },
+  { name: '捷運站', href: '/stations' }
 ];
 
 function classNames(...classes: string[]) {
@@ -27,27 +27,22 @@ export default function Navbar({ user }: { user: any }) {
             <div className="flex h-16 justify-between">
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    className="text-gray-100"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      width="100%"
-                      height="100%"
-                      rx="16"
-                      fill="currentColor"
-                    />
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-                      fill="black"
-                    />
-                  </svg>
+                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                      width="32" height="32" viewBox="0 0 95.635 95.635">
+                    <g>
+                      <g id="&#x5716;&#x5C64;_x0020_1">
+                        <path fill="black"
+                                d="M0.017,54.676l9.868-14.383l9.602,0.019c1.309,0,1.86-0.379,2.467-1.252l7.855-11.404c2.524-3.681,3.206-3.34,5.313-3.34
+                          h24.725l3.662,5.029H42.863c-2.048-0.051-2.494,0.549-3.11,1.518l-6.699,9.715l4.972,0.005c1.032,0.051,1.291-0.65,1.652-1.086
+                          l4.876-6.983c0.94-1.411,2.853-1.213,3.453-1.233l20.246-0.021l5.351,7.744H47.969c-0.988,0-2.145,0.304-3.17,1.575l-8.672,12.372
+                          c-0.91,1.025-1.536,1.404-3.301,1.727H0h0.017V54.676z M95.615,40.958l-9.866,14.366l-9.603-0.001
+                          c-1.309,0-1.859,0.379-2.468,1.252l-7.854,11.404c-2.523,3.681-3.207,3.34-5.312,3.34H35.787l-3.662-5.029H52.77
+                          c2.068,0.133,2.656-0.626,3.112-1.518l6.697-9.715l-4.97-0.038c-0.931-0.114-1.293,0.683-1.652,1.139l-4.876,6.983
+                          c-0.904,1.354-3.613,1.208-3.453,1.232l-20.247,0.038l-5.352-7.761h25.636c0.986,0,2.146-0.303,3.169-1.575l8.672-12.372
+                          c0.911-1.025,1.537-1.405,3.303-1.727h32.826L95.615,40.958z"/>
+                      </g>
+                    </g>
+                    </svg>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (
@@ -67,6 +62,8 @@ export default function Navbar({ user }: { user: any }) {
                   ))}
                 </div>
               </div>
+              {/* Login Panel which we could add soon
+
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
                 <Menu as="div" className="relative ml-3">
                   <div>
@@ -124,6 +121,7 @@ export default function Navbar({ user }: { user: any }) {
                   </Transition>
                 </Menu>
               </div>
+
               <div className="-mr-2 flex items-center sm:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
                   <span className="sr-only">Open main menu</span>
@@ -134,6 +132,7 @@ export default function Navbar({ user }: { user: any }) {
                   )}
                 </Disclosure.Button>
               </div>
+              */}
             </div>
           </div>
 
@@ -156,6 +155,7 @@ export default function Navbar({ user }: { user: any }) {
                 </Disclosure.Button>
               ))}
             </div>
+
             <div className="border-t border-gray-200 pt-4 pb-3">
               {user ? (
                 <>
