@@ -42,7 +42,7 @@ export default function Navbar({ user }: { user: any }) {
                           c0.911-1.025,1.537-1.405,3.303-1.727h32.826L95.615,40.958z"/>
                       </g>
                     </g>
-                    </svg>
+                  </svg>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (
